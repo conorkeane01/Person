@@ -1,4 +1,6 @@
 package ie.atu.person.cicdperson;
 
-public interface PersonRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PersonRepo extends JpaRepository<Person, Long> {
 }
