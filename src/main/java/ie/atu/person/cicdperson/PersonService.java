@@ -4,9 +4,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PersonService {
-    // Placeholder method to save a person (add to Db in the next two weeks)
+    private final PersonRepo personRepo;
+
+    public PersonService(PersonRepo personRepo) {
+        this.personRepo = personRepo;
+    }
     public void savePerson(Person person) {
-        System.out.println("Person saved: " + person);
+        personRepo.save(person);
     }
 
     // Placeholder method to retrieve a person by employeeId
