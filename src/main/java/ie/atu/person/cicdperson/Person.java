@@ -9,13 +9,17 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
-@Entity
 @Data
 @NoArgsConstructor
+@Document(collection = "persons")
 public class Person {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Field("_id")
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank
